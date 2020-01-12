@@ -48,6 +48,7 @@ window.Game = (function () {
   };
 
   var NAMES = ['Кекс', 'Катя', 'Игорь'];
+  var backgroundStatictics = ['#7AC3DB', '#EBE5D9','#28C062','#FFC300', '#E40405'];
 
   /**
    * Порядок прохождения уровней.
@@ -447,8 +448,8 @@ window.Game = (function () {
             var statistics = this._generateStatistics(new Date() - this.state.startTime);
             var keys = this._shuffleArray(Object.keys(statistics));
             window.renderStatistics(this.ctx, keys, keys.map(function (it) {
-              return statistics[it];
-            }));
+              return statistics[it]; 
+            }), backgroundStatictics);
             return;
           }
           message = 'Вы победили Газебо!\nУра!';
